@@ -29,6 +29,7 @@ async def ghibli_style(image: UploadFile = File(...)):
         "Content-Type": "application/json",
     }
 
+# trigger deploy
     json_data = {
         "version": REPLICATE_VERSION,
         "input": {
@@ -39,3 +40,4 @@ async def ghibli_style(image: UploadFile = File(...)):
 
     response = requests.post("https://api.replicate.com/v1/predictions", headers=headers, json=json_data)
     return response.json()
+
